@@ -19,7 +19,7 @@ public class Usuarios {
     private String sexo;
     private String tipoLivroPreferido1;
     private String tipoLivroPreferido2;
-    private ArrayList<CargosUsuarios> cargosUsuarios = new ArrayList<CargosUsuarios>();
+    private ArrayList<Cargos> cargos = new ArrayList<Cargos>();
     private ArrayList<Telefone> telefones = new ArrayList<Telefone>();
     private ArrayList<Livro> livros = new ArrayList<Livro>();
 }

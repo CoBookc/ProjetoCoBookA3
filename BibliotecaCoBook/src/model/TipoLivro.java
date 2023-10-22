@@ -4,10 +4,14 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Guilherme
  */
 public class TipoLivro {
-    
+    private Integer codTipoLivro;
+    private String tipoLivro;
+    private ArrayList<Livro> livros = new ArrayList<Livro>();
 }

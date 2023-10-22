@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Guilherme
@@ -11,4 +13,5 @@ package model;
 public class Atividades {
     private Integer codAtividades;
     private String atividades;
+    private ArrayList<Cargos> cargos = new ArrayList<Cargos>();
 }

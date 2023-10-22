@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Guilherme
@@ -11,4 +13,6 @@ package model;
 public class Cargos {
     private Integer codCargos;
     private String tipoFuncao;
+    private ArrayList<Usuarios> usuarios = new ArrayList<Usuarios>();
+    private ArrayList<Atividades> atividades = new ArrayList<Atividades>();
 }

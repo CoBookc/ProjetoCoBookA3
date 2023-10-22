@@ -4,10 +4,14 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Guilherme
  */
 public class TipoTelefone {
-    
+    private Integer codTipoTelefone;
+    private String tipoTelefone;
+    private ArrayList<Telefone> telefones = new ArrayList<Telefone>();
 }

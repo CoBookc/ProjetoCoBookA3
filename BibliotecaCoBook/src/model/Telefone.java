@@ -9,5 +9,11 @@ package model;
  * @author Guilherme
  */
 public class Telefone {
-    
+    private Integer codTelefone;
+    private String numeroTelefone;
+    private Usuarios usuarios;
+    private Telefone telefone;
 }
+
+
+
