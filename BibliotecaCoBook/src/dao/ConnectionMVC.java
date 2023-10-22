@@ -28,7 +28,7 @@ public class ConnectionMVC {
         e.printStackTrace();
         }
  
-        
+        // Classe de conexão
         
         return conn;
     }
