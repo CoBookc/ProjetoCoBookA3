@@ -12,6 +12,7 @@ import java.sql.SQLException;
  * @author Guilherme
  */
 public class ConnectionMVC {
+ 
     
     public Connection getConnection() {
         Connection conn = null;
@@ -23,7 +24,7 @@ public class ConnectionMVC {
         }
         
         try{
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cobook?useSSL=false", "root", "1234");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cobook?useSSL=false", "root", "senha");
         } catch (SQLException e) {
         e.printStackTrace();
         }
