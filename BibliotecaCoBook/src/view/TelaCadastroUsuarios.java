@@ -42,6 +42,10 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jTextFieldLivroPreferido1 = new javax.swing.JTextField();
         jLabelLivroPreferido2 = new javax.swing.JLabel();
         jTextFieldLivroPreferido2 = new javax.swing.JTextField();
+        jButtonSalvar = new javax.swing.JButton();
+        jButtonLimpar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButtonConsultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Livraria");
@@ -49,7 +53,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
 
         jLabelCadastroUsuario.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabelCadastroUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-livros-64.png"))); // NOI18N
-        jLabelCadastroUsuario.setText("Cadastro de Usuário");
+        jLabelCadastroUsuario.setText("Cadastro de Usuários");
 
         jPanelUsuario.setBackground(new java.awt.Color(102, 102, 102));
         jPanelUsuario.setPreferredSize(new java.awt.Dimension(780, 400));
@@ -103,6 +107,22 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
 
         jTextFieldLivroPreferido2.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
 
+        jButtonSalvar.setBackground(new java.awt.Color(240, 240, 240));
+        jButtonSalvar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButtonSalvar.setText("Salvar");
+
+        jButtonLimpar.setBackground(new java.awt.Color(240, 240, 240));
+        jButtonLimpar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButtonLimpar.setText("Limpar");
+
+        jButton1.setBackground(new java.awt.Color(240, 240, 240));
+        jButton1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButton1.setText("Cancelar");
+
+        jButtonConsultar.setBackground(new java.awt.Color(240, 240, 240));
+        jButtonConsultar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jButtonConsultar.setText("Consultar");
+
         javax.swing.GroupLayout jPanelUsuarioLayout = new javax.swing.GroupLayout(jPanelUsuario);
         jPanelUsuario.setLayout(jPanelUsuarioLayout);
         jPanelUsuarioLayout.setHorizontalGroup(
@@ -130,18 +150,28 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanelUsuarioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
-                                .addComponent(jLabelLivroPreferido2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldLivroPreferido2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
-                                .addComponent(jLabelLivroPreferido1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldLivroPreferido1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(135, Short.MAX_VALUE))
+                    .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanelUsuarioLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
+                                    .addComponent(jLabelLivroPreferido1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTextFieldLivroPreferido1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
+                                    .addComponent(jLabelLivroPreferido2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTextFieldLivroPreferido2))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
+                            .addGap(83, 83, 83)
+                            .addComponent(jButtonSalvar)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButtonLimpar)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton1)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButtonConsultar))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelUsuarioLayout.setVerticalGroup(
             jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +204,13 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                 .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelLivroPreferido2)
                     .addComponent(jTextFieldLivroPreferido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonSalvar)
+                    .addComponent(jButtonLimpar)
+                    .addComponent(jButton1)
+                    .addComponent(jButtonConsultar))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -182,22 +218,21 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(265, 265, 265)
-                        .addComponent(jLabelCadastroUsuario))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGap(265, 265, 265)
+                .addComponent(jLabelCadastroUsuario)
+                .addContainerGap(288, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 768, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabelCadastroUsuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 124, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 31, Short.MAX_VALUE))
         );
 
         pack();
@@ -240,6 +275,10 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonConsultar;
+    private javax.swing.JButton jButtonLimpar;
+    private javax.swing.JButton jButtonSalvar;
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;
     private javax.swing.JFormattedTextField jFormattedTextFieldIdade;
     private javax.swing.JLabel jLabelCPF;
