@@ -7,7 +7,7 @@ package model;
 import dao.ExceptionDAO;
 import java.util.ArrayList;
 import dao.UsuariosDAO;
-import dao.ExceptionDAO;
+
 
 
 /**
@@ -40,11 +40,15 @@ public class Usuarios {
         this.tipoLivroPreferido1 = tipoLivroPreferido1;
         this.tipoLivroPreferido2 = tipoLivroPreferido2;
     }
-    
+
     public Integer getCodUsuarios() {
         return codUsuarios;
     }
-    
+
+    public Integer getIdade() {
+        return idade;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -55,10 +59,6 @@ public class Usuarios {
 
     public String getCpf() {
         return cpf;
-    }
-
-    public Integer getIdade() {
-        return idade;
     }
 
     public String getSexo() {
@@ -72,10 +72,27 @@ public class Usuarios {
     public String getTipoLivroPreferido2() {
         return tipoLivroPreferido2;
     }
-    public void setCodUsuarios(Integer codUsuarios){
+
+    public ArrayList<Cargos> getCargos() {
+        return cargos;
+    }
+
+    public ArrayList<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public ArrayList<Livro> getLivros() {
+        return livros;
+    }
+
+    public void setCodUsuarios(Integer codUsuarios) {
         this.codUsuarios = codUsuarios;
     }
-    
+
+    public void setIdade(Integer idade) {
+        this.idade = idade;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -86,10 +103,6 @@ public class Usuarios {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public void setIdade(Integer idade) {
-        this.idade = idade;
     }
 
     public void setSexo(String sexo) {
@@ -103,7 +116,21 @@ public class Usuarios {
     public void setTipoLivroPreferido2(String tipoLivroPreferido2) {
         this.tipoLivroPreferido2 = tipoLivroPreferido2;
     }
+
+    public void setCargos(ArrayList<Cargos> cargos) {
+        this.cargos = cargos;
+    }
+
+    public void setTelefones(ArrayList<Telefone> telefones) {
+        this.telefones = telefones;
+    }
+
+    public void setLivros(ArrayList<Livro> livros) {
+        this.livros = livros;
+    }
+    
+
     public void cadastrarUsuarios(Usuarios usuarios) throws ExceptionDAO {
         new UsuariosDAO().cadastrarUsuarios(usuarios);
-    }
+}
 }
