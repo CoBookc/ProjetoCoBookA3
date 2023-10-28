@@ -22,7 +22,7 @@ public class UsuariosController {
             }
             return false;
         }
-      public boolean validarCPF(String CPF){
+      public boolean validarCPF(String cpf){
             for(int i=0; i < cpf.length(); i++){
                 if(!Character.isDigit(cpf.charAt(i))){
                     if(!( i == 3 || i == 7 || i == 11 )){
