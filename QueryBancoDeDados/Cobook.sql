@@ -5,11 +5,11 @@ CREATE TABLE Usuarios (
     cod_usuarios INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(40),
     email VARCHAR(50),
-    CPF VARCHAR(11) NOT NULL,
+    CPF VARCHAR(14) NOT NULL,
     idade INT,
     sexo VARCHAR(10),
-    tipo_livro_preferido1 VARCHAR(10),
-    tipo_livro_preferido2 VARCHAR(10)
+    tipo_livro_preferido1 VARCHAR(100),
+    tipo_livro_preferido2 VARCHAR(100)
 );
 
 CREATE TABLE Atividades (
@@ -59,7 +59,7 @@ CREATE TABLE tipo_livro (
 
 CREATE TABLE Livro (
     cod_livro INT PRIMARY KEY,
-    nome_livro VARCHAR(50),
+    nome_livro VARCHAR(100),
     titulo VARCHAR(50),
     autor VARCHAR(50),
     nota INT,
