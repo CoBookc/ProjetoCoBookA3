@@ -41,7 +41,7 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         jButtonConsultarLivro = new javax.swing.JButton();
         jLabelCadastroLivros = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Livraria");
         setResizable(false);
 

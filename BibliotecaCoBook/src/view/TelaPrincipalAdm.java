@@ -99,6 +99,11 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
         jMenuItemCadastroLivrosAdm.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jMenuItemCadastroLivrosAdm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha.png"))); // NOI18N
         jMenuItemCadastroLivrosAdm.setText("Livros");
+        jMenuItemCadastroLivrosAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadastroLivrosAdmActionPerformed(evt);
+            }
+        });
         jMenuCadastrarAdm.add(jMenuItemCadastroLivrosAdm);
 
         jMenuBar1.add(jMenuCadastrarAdm);
@@ -149,6 +154,14 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     // Torna a tela de cadastro de usuários visível
     telaCadastroUsuarios.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadastrarUsuariosAdmActionPerformed
+
+    private void jMenuItemCadastroLivrosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastroLivrosAdmActionPerformed
+            // Crie uma instância da tela de cadastro de usuários
+    TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros();
+
+    // Torna a tela de cadastro de usuários visível
+    telaCadastroLivros.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadastroLivrosAdmActionPerformed
 
     /**
      * @param args the command line arguments
