@@ -94,6 +94,11 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jLabelSexo.setText("Sexo:");
 
         jTextFieldSexo.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jTextFieldSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldSexoActionPerformed(evt);
+            }
+        });
 
         jLabelLivroPreferido1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabelLivroPreferido1.setForeground(new java.awt.Color(255, 255, 255));
@@ -137,9 +142,9 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                                     .addComponent(jLabelIdade)
                                     .addComponent(jLabelSexo))
                                 .addGap(47, 47, 47)
-                                .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jFormattedTextFieldIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jFormattedTextFieldIdade, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldSexo)))
                             .addGroup(jPanelUsuarioLayout.createSequentialGroup()
                                 .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelNome)
@@ -171,7 +176,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                             .addComponent(jButton1)
                             .addGap(18, 18, 18)
                             .addComponent(jButtonConsultar))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         jPanelUsuarioLayout.setVerticalGroup(
             jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,6 +243,10 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextFieldSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldSexoActionPerformed
 
     /**
      * @param args the command line arguments
