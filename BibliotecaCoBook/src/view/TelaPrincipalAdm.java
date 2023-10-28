@@ -85,6 +85,11 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
         jMenuItemCadastrarUsuariosAdm.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jMenuItemCadastrarUsuariosAdm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha.png"))); // NOI18N
         jMenuItemCadastrarUsuariosAdm.setText("Usuários");
+        jMenuItemCadastrarUsuariosAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemCadastrarUsuariosAdmActionPerformed(evt);
+            }
+        });
         jMenuCadastrarAdm.add(jMenuItemCadastrarUsuariosAdm);
 
         jMenuItemCadastroLivrosAdm.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -125,6 +130,14 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     private void jMenuItemVLivrosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVLivrosAdmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemVLivrosAdmActionPerformed
+
+    private void jMenuItemCadastrarUsuariosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastrarUsuariosAdmActionPerformed
+
+    // Crie uma instância da tela de cadastro de usuários
+    TelaCadastroUsuarios telaCadastroUsuarios = new TelaCadastroUsuarios();
+    // Torna a tela de cadastro de usuários visível
+    telaCadastroUsuarios.setVisible(true);
+    }//GEN-LAST:event_jMenuItemCadastrarUsuariosAdmActionPerformed
 
     /**
      * @param args the command line arguments
