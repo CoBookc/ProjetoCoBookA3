@@ -4,8 +4,8 @@ USE CoBook;
 CREATE TABLE Usuarios (
     cod_usuarios INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(40),
-    email VARCHAR(50),
-    CPF VARCHAR(14) NOT NULL,
+    email VARCHAR(50) UNIQUE,
+    CPF VARCHAR(14) UNIQUE NOT NULL,
     idade INT,
     sexo VARCHAR(10),
     tipo_livro_preferido1 VARCHAR(100),
