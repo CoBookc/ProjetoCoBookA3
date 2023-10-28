@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.UsuariosController;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Guilherme
@@ -74,6 +77,11 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         jFormattedTextFieldCPF.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jFormattedTextFieldCPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldCPFActionPerformed(evt);
+            }
+        });
 
         jLabelEmail.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabelEmail.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,10 +123,20 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jButtonSalvar.setBackground(new java.awt.Color(240, 240, 240));
         jButtonSalvar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButtonSalvar.setText("Salvar");
+        jButtonSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarActionPerformed(evt);
+            }
+        });
 
         jButtonLimpar.setBackground(new java.awt.Color(240, 240, 240));
         jButtonLimpar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButtonLimpar.setText("Limpar");
+        jButtonLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLimparActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(240, 240, 240));
         jButton1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -247,6 +265,31 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
     private void jTextFieldSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSexoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldSexoActionPerformed
+
+    private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
+        boolean sucesso;
+        int idade = Integer.parseInt(jFormattedTextFieldIdade.getValue().toString());
+        try {
+            UsuariosController usuariosController = new UsuariosController();
+            sucesso = usuariosController.cadastrarUsuarios(jTextFieldNome.getText(),jTextFieldEmail.getText(), jFormattedTextFieldCPF.getText(), idade, jTextFieldSexo.getText(), jTextFieldLivroPreferido1.getText(), jTextFieldLivroPreferido2.getText());
+         if(sucesso){
+             JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
+             this.jButtonLimparActionPerformed(evt);
+         } else {
+             JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente!");
+         }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro:" + e);
+        }
+    }//GEN-LAST:event_jButtonSalvarActionPerformed
+
+    private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonLimparActionPerformed
+
+    private void jFormattedTextFieldCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldCPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldCPFActionPerformed
 
     /**
      * @param args the command line arguments
