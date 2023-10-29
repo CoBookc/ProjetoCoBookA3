@@ -84,6 +84,11 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         jButtonLimparLivro.setBackground(new java.awt.Color(240, 240, 240));
         jButtonLimparLivro.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButtonLimparLivro.setText("Limpar");
+        jButtonLimparLivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLimparLivroActionPerformed(evt);
+            }
+        });
 
         jButtonCancelarLivro.setBackground(new java.awt.Color(240, 240, 240));
         jButtonCancelarLivro.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -191,7 +196,7 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
             sucesso = livroController.cadastrarLivro(jTextFieldTituloLivro.getText(),jTextFieldTipoLivro.getText(), jTextFieldAutorLivro.getText(), nota);
          if(sucesso){
              JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
- //            this.;
+             this.jButtonLimparLivroActionPerformed(evt);
          } else {
              JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente!");
          }
@@ -200,6 +205,13 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButtonSalvarLivroActionPerformed
+
+    private void jButtonLimparLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparLivroActionPerformed
+        jFormattedTextFieldNotaLivro.setText("");     
+        jTextFieldTituloLivro.setText(""); 
+        jTextFieldTipoLivro.setText(""); 
+        jTextFieldAutorLivro.setText(""); 
+    }//GEN-LAST:event_jButtonLimparLivroActionPerformed
 
     /**
      * @param args the command line arguments

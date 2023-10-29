@@ -274,7 +274,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
             sucesso = usuariosController.cadastrarUsuarios(jTextFieldNome.getText(),jTextFieldEmail.getText(), jFormattedTextFieldCPF.getText(), idade, jTextFieldSexo.getText(), jTextFieldLivroPreferido1.getText(), jTextFieldLivroPreferido2.getText());
          if(sucesso){
              JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
- //            this.jButtonLimparActionPerformed(evt);
+         this.jButtonLimparActionPerformed(evt);
          } else {
              JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente!");
          }
@@ -284,7 +284,13 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
-        // TODO add your handling code here:
+        jFormattedTextFieldIdade.setText("");
+        jFormattedTextFieldCPF.setText("");        
+        jTextFieldNome.setText(""); 
+        jTextFieldEmail.setText(""); 
+        jTextFieldSexo.setText(""); 
+        jTextFieldLivroPreferido1.setText(""); 
+        jTextFieldLivroPreferido2.setText(""); 
     }//GEN-LAST:event_jButtonLimparActionPerformed
 
     private void jFormattedTextFieldCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldCPFActionPerformed
