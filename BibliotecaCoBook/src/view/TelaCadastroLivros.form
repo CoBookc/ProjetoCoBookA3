@@ -66,15 +66,15 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelNomeLivro" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelTitulo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelTituloLivro" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelTipoLivro" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelAutorLivro" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jTextFieldNomeLivro" pref="490" max="32767" attributes="0"/>
-                              <Component id="jTextFieldTituloLivro" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jTextFieldTituloLivro" pref="490" max="32767" attributes="0"/>
+                              <Component id="jTextFieldTipoLivro" alignment="0" max="32767" attributes="0"/>
                               <Component id="jTextFieldAutorLivro" alignment="0" max="32767" attributes="0"/>
                               <Component id="jFormattedTextFieldNotaLivro" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
@@ -90,7 +90,7 @@
                           <Component id="jButtonConsultarLivro" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="133" max="32767" attributes="0"/>
+                  <EmptySpace pref="136" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -99,13 +99,13 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelNomeLivro" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldNomeLivro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelTituloLivro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldTituloLivro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextFieldTituloLivro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelTipoLivro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldTipoLivro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -130,25 +130,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabelNomeLivro">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Calibri" size="18" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Nome:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextFieldNomeLivro">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Calibri" size="12" style="0"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelTitulo">
+        <Component class="javax.swing.JLabel" name="jLabelTituloLivro">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="18" style="0"/>
@@ -160,6 +142,24 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldTituloLivro">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="12" style="0"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelTipoLivro">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Tipo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextFieldTipoLivro">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Calibri" size="12" style="0"/>

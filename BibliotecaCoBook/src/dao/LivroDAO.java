@@ -13,15 +13,15 @@ import model.Livro;
  */
 public class LivroDAO {
         public void cadastrarLivro (Livro livro) throws ExceptionDAO {
-        String sql = "Insert into livro (nome_livro, titulo, autor, nota) values (?, ?, ?, ?)";
+        String sql = "Insert into livro (titulo, tipo_livro, autor, nota) values (?, ?, ?, ?)";
         PreparedStatement pStatement = null;
         Connection connection = null;
         
         try{
             connection = new ConnectionMVC().getConnection();
             pStatement = connection.prepareStatement(sql);
-            pStatement.setString(1, livro.getNomeLivro());
-            pStatement.setString(2, livro.getTitulo());
+            pStatement.setString(1, livro.getTitulo());
+            pStatement.setString(2, livro.getTipoLivro());
             pStatement.setString(3, livro.getAutor());
             pStatement.setInt(4, livro.getNota());
             pStatement.execute();

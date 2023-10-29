@@ -13,63 +13,71 @@ import dao.LivroDAO;
  */
 public class Livro {
     private Integer codLivro;
-
-    private String nomeLivro;
     private String titulo;
+    private String tipoLivro;
     private String autor;
     private Integer nota;
+    private Usuarios usuarios;
     
      public Livro () {
         
     }
-    public Livro(String nomeLivro, String titulo, String autor, Integer nota){
+    public Livro(String titulo,String tipoLivro,String autor, Integer nota){
 
-        this.nomeLivro = nomeLivro;
         this.titulo = titulo;
+        this.tipoLivro = tipoLivro;
         this.autor = autor;
         this.nota = nota;
     }
-    
+
     public Integer getCodLivro() {
-    return codLivro;
-    }
-
-    public Integer getNota() {
-        return nota;
-    }
-
-    public String getNomeLivro() {
-        return nomeLivro;
+        return codLivro;
     }
 
     public String getTitulo() {
         return titulo;
     }
 
+    public String getTipoLivro() {
+        return tipoLivro;
+    }
+
     public String getAutor() {
         return autor;
     }
 
+    public Integer getNota() {
+        return nota;
+    }
+
+    public Usuarios getUsuarios() {
+        return usuarios;
+    }
 
     public void setCodLivro(Integer codLivro) {
         this.codLivro = codLivro;
-    }
-
-    public void setNota(Integer nota) {
-        this.nota = nota;
-    }
-
-    public void setNomeLivro(String nomeLivro) {
-        this.nomeLivro = nomeLivro;
     }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
+    public void setTipoLivro(String tipoLivro) {
+        this.tipoLivro = tipoLivro;
+    }
+
     public void setAutor(String autor) {
         this.autor = autor;
     }
+
+    public void setNota(Integer nota) {
+        this.nota = nota;
+    }
+
+    public void setUsuarios(Usuarios usuarios) {
+        this.usuarios = usuarios;
+    }
+    
 
     
     public void cadastrarLivro(Livro livro) throws ExceptionDAO{

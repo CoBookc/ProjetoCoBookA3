@@ -29,7 +29,7 @@ CREATE TABLE cargos_usuarios (
 
 
 CREATE TABLE Livro (
-    cod_livro INT PRIMARY KEY,
+    cod_livro INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(100),
 	tipo_livro VARCHAR(100),
     autor VARCHAR(100),

@@ -24,7 +24,6 @@ public class Usuarios {
     private String tipoLivroPreferido1;
     private String tipoLivroPreferido2;
     private ArrayList<Cargos> cargos = new ArrayList<Cargos>();
-    private ArrayList<Telefone> telefones = new ArrayList<Telefone>();
     private ArrayList<Livro> livros = new ArrayList<Livro>();
     
     public Usuarios () {
@@ -77,9 +76,6 @@ public class Usuarios {
         return cargos;
     }
 
-    public ArrayList<Telefone> getTelefones() {
-        return telefones;
-    }
 
     public ArrayList<Livro> getLivros() {
         return livros;
@@ -121,9 +117,6 @@ public class Usuarios {
         this.cargos = cargos;
     }
 
-    public void setTelefones(ArrayList<Telefone> telefones) {
-        this.telefones = telefones;
-    }
 
     public void setLivros(ArrayList<Livro> livros) {
         this.livros = livros;
