@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.LivroController;
 /**
  *
  * @author Guilherme
@@ -75,6 +76,11 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         jButtonSalvarLivro.setBackground(new java.awt.Color(240, 240, 240));
         jButtonSalvarLivro.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButtonSalvarLivro.setText("Salvar");
+        jButtonSalvarLivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarLivroActionPerformed(evt);
+            }
+        });
 
         jButtonLimparLivro.setBackground(new java.awt.Color(240, 240, 240));
         jButtonLimparLivro.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
@@ -175,6 +181,24 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonSalvarLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarLivroActionPerformed
+         boolean sucesso;
+        int nota = Integer.parseInt(jFormattedTextFieldNota.getValue().toString());
+        try {
+            LivroController livroController = new LivroController();
+            sucesso = LivroController.cadastrarLivro( nota, jTextFieldNomeLivro.getText(),jTextFieldTituloLivro.getText(), jTextFieldAutorLivro.getText());
+         if(sucesso){
+             JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
+             this.jButtonLimparActionPerformed(evt);
+         } else {
+             JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente!");
+         }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro:" + e);
+        }
+        
+    }//GEN-LAST:event_jButtonSalvarLivroActionPerformed
 
     /**
      * @param args the command line arguments
