@@ -4,21 +4,34 @@
  */
 package model;
 
+import dao.ExceptionDAO;
+import dao.LivroDAO;
+
 /**
  *
  * @author Guilherme
  */
 public class Livro {
     private Integer codLivro;
-    private Integer nota;
+
     private String nomeLivro;
     private String titulo;
     private String autor;
-    private Usuarios usuarios;
-    private TipoLivro tipoLivro;
+    private Integer nota;
+    
+     public Livro () {
+        
+    }
+    public Livro(String nomeLivro, String titulo, String autor, Integer nota){
 
+        this.nomeLivro = nomeLivro;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.nota = nota;
+    }
+    
     public Integer getCodLivro() {
-        return codLivro;
+    return codLivro;
     }
 
     public Integer getNota() {
@@ -37,13 +50,6 @@ public class Livro {
         return autor;
     }
 
-    public Usuarios getUsuarios() {
-        return usuarios;
-    }
-
-    public TipoLivro getTipoLivro() {
-        return tipoLivro;
-    }
 
     public void setCodLivro(Integer codLivro) {
         this.codLivro = codLivro;
@@ -65,15 +71,9 @@ public class Livro {
         this.autor = autor;
     }
 
-    public void setUsuarios(Usuarios usuarios) {
-        this.usuarios = usuarios;
-    }
-
-    public void setTipoLivro(TipoLivro tipoLivro) {
-        this.tipoLivro = tipoLivro;
-    }
     
-    public void cadastrarLivro(Livro livro){
-        
+    public void cadastrarLivro(Livro livro) throws ExceptionDAO{
+      new LivroDAO().cadastrarLivro(livro);
+      
     }
 }

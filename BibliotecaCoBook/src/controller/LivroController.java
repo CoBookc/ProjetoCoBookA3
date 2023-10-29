@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controller;
-
+import dao.ExceptionDAO;
 import model.Livro;
 
 /**
@@ -11,20 +11,15 @@ import model.Livro;
  * @author Gustavo
  */
 public class LivroController {
-    public boolean cadastrarLivro(Integer codLivro, Integer nota, String nomeLivro, String titulo, String autor){
+    
+    public boolean cadastrarLivro(String nomeLivro, String titulo, String autor, Integer nota) throws ExceptionDAO{
         
-        if(codLivro != null && codLivro > 0 &&  nomeLivro != null && titulo.length() > 0 && titulo != null && titulo.length() > 0 && autor != null && autor.length() > 0){
-            Livro livro = new Livro(codLivro, nota, nomeLivro, titulo, autor);
-            
+        if(nomeLivro != null && nomeLivro.length() > 0 && titulo != null && titulo.length() > 0 && autor != null && autor.length() > 0 && nota != null && nota >= 0 || nota <= 10){
+            Livro livro = new Livro(nomeLivro, titulo, autor, nota);
+            livro.cadastrarLivro(livro);
+            return true;
     }
         return false;
-}
-     public boolean validarNota(String nota){
-          int notaTeste = Integer.parseInt(nota);
-         
-        if( notaTeste >= 0  ||  notaTeste <= 10){
-            return false;   
-        }
-            return true;
-            }
-}
+    }
+
+ }

@@ -5,6 +5,7 @@
 package view;
 
 import controller.LivroController;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Guilherme
@@ -35,11 +36,11 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         jLabelAutorLivro = new javax.swing.JLabel();
         jTextFieldAutorLivro = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jTextFieldNotaLivro = new javax.swing.JTextField();
         jButtonSalvarLivro = new javax.swing.JButton();
         jButtonLimparLivro = new javax.swing.JButton();
         jButtonCancelarLivro = new javax.swing.JButton();
         jButtonConsultarLivro = new javax.swing.JButton();
+        jFormattedTextFieldNotaLivro = new javax.swing.JFormattedTextField();
         jLabelCadastroLivros = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -71,8 +72,6 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nota:");
 
-        jTextFieldNotaLivro.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
-
         jButtonSalvarLivro.setBackground(new java.awt.Color(240, 240, 240));
         jButtonSalvarLivro.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButtonSalvarLivro.setText("Salvar");
@@ -94,6 +93,9 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         jButtonConsultarLivro.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButtonConsultarLivro.setText("Consultar");
 
+        jFormattedTextFieldNotaLivro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##"))));
+        jFormattedTextFieldNotaLivro.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout jPanelCadastroLivrosLayout = new javax.swing.GroupLayout(jPanelCadastroLivros);
         jPanelCadastroLivros.setLayout(jPanelCadastroLivrosLayout);
         jPanelCadastroLivrosLayout.setHorizontalGroup(
@@ -108,12 +110,11 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
                             .addComponent(jLabelAutorLivro)
                             .addComponent(jLabel1))
                         .addGap(44, 44, 44)
-                        .addGroup(jPanelCadastroLivrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelCadastroLivrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextFieldNomeLivro, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-                                .addComponent(jTextFieldTituloLivro)
-                                .addComponent(jTextFieldAutorLivro))
-                            .addComponent(jTextFieldNotaLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanelCadastroLivrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldNomeLivro, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                            .addComponent(jTextFieldTituloLivro)
+                            .addComponent(jTextFieldAutorLivro)
+                            .addComponent(jFormattedTextFieldNotaLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelCadastroLivrosLayout.createSequentialGroup()
                         .addGap(114, 114, 114)
                         .addComponent(jButtonSalvarLivro)
@@ -143,7 +144,7 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelCadastroLivrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextFieldNotaLivro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jFormattedTextFieldNotaLivro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addGroup(jPanelCadastroLivrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvarLivro)
@@ -184,13 +185,13 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
 
     private void jButtonSalvarLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarLivroActionPerformed
          boolean sucesso;
-        int nota = Integer.parseInt(jFormattedTextFieldNota.getValue().toString());
+        int nota = Integer.parseInt(jFormattedTextFieldNotaLivro.getValue().toString());
         try {
             LivroController livroController = new LivroController();
-            sucesso = LivroController.cadastrarLivro( nota, jTextFieldNomeLivro.getText(),jTextFieldTituloLivro.getText(), jTextFieldAutorLivro.getText());
+            sucesso = livroController.cadastrarLivro(jTextFieldNomeLivro.getText(),jTextFieldTituloLivro.getText(), jTextFieldAutorLivro.getText(), nota);
          if(sucesso){
              JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
-             this.jButtonLimparActionPerformed(evt);
+ //            this.;
          } else {
              JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente!");
          }
@@ -240,6 +241,7 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConsultarLivro;
     private javax.swing.JButton jButtonLimparLivro;
     private javax.swing.JButton jButtonSalvarLivro;
+    private javax.swing.JFormattedTextField jFormattedTextFieldNotaLivro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAutorLivro;
     private javax.swing.JLabel jLabelCadastroLivros;
@@ -248,7 +250,6 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelCadastroLivros;
     private javax.swing.JTextField jTextFieldAutorLivro;
     private javax.swing.JTextField jTextFieldNomeLivro;
-    private javax.swing.JTextField jTextFieldNotaLivro;
     private javax.swing.JTextField jTextFieldTituloLivro;
     // End of variables declaration//GEN-END:variables
 }
