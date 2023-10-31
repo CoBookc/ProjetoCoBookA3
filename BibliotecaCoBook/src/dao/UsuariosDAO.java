@@ -15,7 +15,7 @@ import model.Usuarios;
  */
 public class UsuariosDAO {
     public void cadastrarUsuarios (Usuarios usuarios) throws ExceptionDAO {
-        String sql = "Insert into usuarios (nome, email, cpf, idade, sexo, tipo_livro_preferido1, tipo_livro_preferido2 ) values (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "Insert into usuarios (nome, email, cpf, idade, sexo, tipo_livro_preferido1, tipo_livro_preferido2, senha ) values (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement pStatement = null;
         Connection connection = null;
         
@@ -29,6 +29,7 @@ public class UsuariosDAO {
             pStatement.setString(5, usuarios.getSexo());
             pStatement.setString(6, usuarios.getTipoLivroPreferido1());
             pStatement.setString(7, usuarios.getTipoLivroPreferido2());
+            pStatement.setString(8, usuarios.getSenha());
             pStatement.execute();
             
    

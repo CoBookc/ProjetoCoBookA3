@@ -23,6 +23,7 @@ public class Usuarios {
     private String sexo;
     private String tipoLivroPreferido1;
     private String tipoLivroPreferido2;
+    private String senha;
     private ArrayList<Cargos> cargos = new ArrayList<Cargos>();
     private ArrayList<Livro> livros = new ArrayList<Livro>();
     
@@ -30,7 +31,7 @@ public class Usuarios {
         
     }
     
-    public Usuarios(String nome, String email, String cpf, Integer idade, String sexo, String tipoLivroPreferido1, String tipoLivroPreferido2){
+    public Usuarios(String nome, String email, String cpf, Integer idade, String sexo, String tipoLivroPreferido1, String tipoLivroPreferido2, String senha){
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
@@ -38,6 +39,7 @@ public class Usuarios {
         this.sexo = sexo;
         this.tipoLivroPreferido1 = tipoLivroPreferido1;
         this.tipoLivroPreferido2 = tipoLivroPreferido2;
+        this.senha = senha;
     }
 
     public Integer getCodUsuarios() {
@@ -70,6 +72,9 @@ public class Usuarios {
 
     public String getTipoLivroPreferido2() {
         return tipoLivroPreferido2;
+    }
+    public String getSenha() {
+        return senha;
     }
 
     public ArrayList<Cargos> getCargos() {
@@ -111,6 +116,10 @@ public class Usuarios {
 
     public void setTipoLivroPreferido2(String tipoLivroPreferido2) {
         this.tipoLivroPreferido2 = tipoLivroPreferido2;
+    }
+    
+    public void setSenha(String senha){
+        this.senha = senha;
     }
 
     public void setCargos(ArrayList<Cargos> cargos) {

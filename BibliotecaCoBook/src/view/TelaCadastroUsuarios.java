@@ -49,6 +49,8 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jButtonLimpar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButtonConsultar = new javax.swing.JButton();
+        jLabelUsuariosSenha = new javax.swing.JLabel();
+        jPasswordFieldUsuariosSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Livraria");
@@ -146,6 +148,12 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jButtonConsultar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButtonConsultar.setText("Consultar");
 
+        jLabelUsuariosSenha.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jLabelUsuariosSenha.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelUsuariosSenha.setText("Senha Padrão:");
+
+        jPasswordFieldUsuariosSenha.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout jPanelUsuarioLayout = new javax.swing.GroupLayout(jPanelUsuario);
         jPanelUsuario.setLayout(jPanelUsuarioLayout);
         jPanelUsuarioLayout.setHorizontalGroup(
@@ -182,9 +190,15 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(jTextFieldLivroPreferido1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
-                                    .addComponent(jLabelLivroPreferido2)
+                                    .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabelUsuariosSenha)
+                                        .addComponent(jLabelLivroPreferido2))
                                     .addGap(18, 18, 18)
-                                    .addComponent(jTextFieldLivroPreferido2))))
+                                    .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldLivroPreferido2)
+                                        .addGroup(jPanelUsuarioLayout.createSequentialGroup()
+                                            .addComponent(jPasswordFieldUsuariosSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(0, 0, Short.MAX_VALUE))))))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
                             .addGap(83, 83, 83)
                             .addComponent(jButtonSalvar)
@@ -194,7 +208,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                             .addComponent(jButton1)
                             .addGap(18, 18, 18)
                             .addComponent(jButtonConsultar))))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelUsuarioLayout.setVerticalGroup(
             jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,13 +241,17 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                 .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelLivroPreferido2)
                     .addComponent(jTextFieldLivroPreferido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelUsuariosSenha)
+                    .addComponent(jPasswordFieldUsuariosSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvar)
                     .addComponent(jButtonLimpar)
                     .addComponent(jButton1)
                     .addComponent(jButtonConsultar))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -254,8 +272,8 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabelCadastroUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+                .addComponent(jPanelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 23, Short.MAX_VALUE))
         );
 
         pack();
@@ -271,7 +289,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         int idade = Integer.parseInt(jFormattedTextFieldIdade.getValue().toString());
         try {
             UsuariosController usuariosController = new UsuariosController();
-            sucesso = usuariosController.cadastrarUsuarios(jTextFieldNome.getText(),jTextFieldEmail.getText(), jFormattedTextFieldCPF.getText(), idade, jTextFieldSexo.getText(), jTextFieldLivroPreferido1.getText(), jTextFieldLivroPreferido2.getText());
+            sucesso = usuariosController.cadastrarUsuarios(jTextFieldNome.getText(),jTextFieldEmail.getText(), jFormattedTextFieldCPF.getText(), idade, jTextFieldSexo.getText(), jTextFieldLivroPreferido1.getText(), jTextFieldLivroPreferido2.getText(), jPasswordFieldUsuariosSenha.getText());
          if(sucesso){
              JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
          this.jButtonLimparActionPerformed(evt);
@@ -291,6 +309,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jTextFieldSexo.setText(""); 
         jTextFieldLivroPreferido1.setText(""); 
         jTextFieldLivroPreferido2.setText(""); 
+        jPasswordFieldUsuariosSenha.setText("");
     }//GEN-LAST:event_jButtonLimparActionPerformed
 
     private void jFormattedTextFieldCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldCPFActionPerformed
@@ -347,7 +366,9 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelLivroPreferido2;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelSexo;
+    private javax.swing.JLabel jLabelUsuariosSenha;
     private javax.swing.JPanel jPanelUsuario;
+    private javax.swing.JPasswordField jPasswordFieldUsuariosSenha;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldLivroPreferido1;
     private javax.swing.JTextField jTextFieldLivroPreferido2;
