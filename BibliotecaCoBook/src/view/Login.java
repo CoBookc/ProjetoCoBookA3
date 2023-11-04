@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import dao.ConnectionMVC;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,32 +33,24 @@ public class Login extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
-        usuarioText = new javax.swing.JTextField();
-        senhaText = new javax.swing.JTextField();
         buttonSignIn = new java.awt.Button();
-        button2 = new java.awt.Button();
-        jLabel1Usuario = new javax.swing.JLabel();
-        jLabel2Senha = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        menuLogo = new javax.swing.JMenu();
-        CoBook = new javax.swing.JMenu();
-        jMenu1Space = new javax.swing.JMenu();
-        loginText = new javax.swing.JMenu();
+        buttonLoginCancel = new java.awt.Button();
+        jLabelLoginUsuario = new javax.swing.JLabel();
+        jLabelLoginSenha = new javax.swing.JLabel();
+        jPasswordFieldLoginUsuarios = new javax.swing.JPasswordField();
+        jTextFieldLoginUsuarios = new javax.swing.JTextField();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenuCobook = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
         jMenuItem2.setText("jMenuItem2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("LoginPage");
         setResizable(false);
 
-        senhaText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                senhaTextActionPerformed(evt);
-            }
-        });
-
+        buttonSignIn.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         buttonSignIn.setLabel("Sign In");
         buttonSignIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,73 +58,76 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        button2.setLabel("Cancel");
+        buttonLoginCancel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        buttonLoginCancel.setLabel("Cancel");
+        buttonLoginCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLoginCancelActionPerformed(evt);
+            }
+        });
 
-        jLabel1Usuario.setBackground(new java.awt.Color(255, 0, 0));
-        jLabel1Usuario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1Usuario.setText("Usuário");
-        jLabel1Usuario.setPreferredSize(new java.awt.Dimension(40, 22));
+        jLabelLoginUsuario.setBackground(new java.awt.Color(255, 0, 0));
+        jLabelLoginUsuario.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabelLoginUsuario.setText("Email");
+        jLabelLoginUsuario.setPreferredSize(new java.awt.Dimension(40, 22));
 
-        jLabel2Senha.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2Senha.setText("Senha");
-        jLabel2Senha.setPreferredSize(new java.awt.Dimension(40, 22));
+        jLabelLoginSenha.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabelLoginSenha.setText("Senha");
+        jLabelLoginSenha.setPreferredSize(new java.awt.Dimension(40, 22));
 
-        menuLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-livros-64.png"))); // NOI18N
-        jMenuBar1.add(menuLogo);
+        jPasswordFieldLoginUsuarios.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
 
-        CoBook.setText("CoBook");
-        CoBook.setFocusable(false);
-        CoBook.setFont(new java.awt.Font("Arial", 1, 13)); // NOI18N
-        CoBook.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        CoBook.setPreferredSize(new java.awt.Dimension(60, 23));
-        jMenuBar1.add(CoBook);
+        jTextFieldLoginUsuarios.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
 
-        jMenu1Space.setPreferredSize(new java.awt.Dimension(35, 6));
-        jMenuBar1.add(jMenu1Space);
+        jMenuCobook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-livros-64.png"))); // NOI18N
+        jMenuCobook.setText("Cobook");
+        jMenuCobook.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jMenuBar2.add(jMenuCobook);
 
-        loginText.setText("Login");
-        loginText.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        loginText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        loginText.setPreferredSize(new java.awt.Dimension(150, 22));
-        jMenuBar1.add(loginText);
-
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2Senha, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap(107, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelLoginSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPasswordFieldLoginUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelLoginUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldLoginUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(151, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(buttonSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(usuarioText, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(senhaText, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(37, Short.MAX_VALUE))
+                        .addGap(121, 121, 121)
+                        .addComponent(buttonLoginCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(180, 180, 180))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addContainerGap(83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usuarioText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                    .addComponent(jTextFieldLoginUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelLoginUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(senhaText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2Senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonSignIn, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(button2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(24, 24, 24))
+                    .addComponent(jLabelLoginSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPasswordFieldLoginUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonLoginCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65))
         );
 
         pack();
@@ -136,11 +136,39 @@ public class Login extends javax.swing.JFrame {
 
     private void buttonSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignInActionPerformed
         // TODO add your handling code here:
+         try {
+        Connection connection;
+        String email = jTextFieldLoginUsuarios.getText();
+        String senha = jPasswordFieldLoginUsuarios.getText();
+        String sql = "select * from usuarios where email ='"+email+"' and senha = '"+senha+"'";
+        connection = new ConnectionMVC().getConnection(); 
+           Statement stm = connection.createStatement();
+           
+           ResultSet rs = stm.executeQuery(sql);
+           
+           if(rs.next()){
+           dispose();
+             TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm();
+              telaPrincipalAdm.setVisible(true);
+           } else{
+               JOptionPane.showMessageDialog(this, "Usuário e senha estão incorretos!");
+               jTextFieldLoginUsuarios.setText("");
+               jPasswordFieldLoginUsuarios.setText("");
+           }
+           
+           connection.close();
+           
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,(e.getMessage()));
+        }
+        
     }//GEN-LAST:event_buttonSignInActionPerformed
 
-    private void senhaTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaTextActionPerformed
+    private void buttonLoginCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginCancelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_senhaTextActionPerformed
+        jTextFieldLoginUsuarios.setText("");
+        jPasswordFieldLoginUsuarios.setText("");
+    }//GEN-LAST:event_buttonLoginCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,18 +206,15 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu CoBook;
-    private java.awt.Button button2;
+    private java.awt.Button buttonLoginCancel;
     private java.awt.Button buttonSignIn;
-    private javax.swing.JLabel jLabel1Usuario;
-    private javax.swing.JLabel jLabel2Senha;
-    private javax.swing.JMenu jMenu1Space;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jLabelLoginSenha;
+    private javax.swing.JLabel jLabelLoginUsuario;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenu jMenuCobook;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenu loginText;
-    private javax.swing.JMenu menuLogo;
-    private javax.swing.JTextField senhaText;
-    private javax.swing.JTextField usuarioText;
+    private javax.swing.JPasswordField jPasswordFieldLoginUsuarios;
+    private javax.swing.JTextField jTextFieldLoginUsuarios;
     // End of variables declaration//GEN-END:variables
 }

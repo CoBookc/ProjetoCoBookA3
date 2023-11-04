@@ -73,8 +73,9 @@ public class Usuarios {
     public String getTipoLivroPreferido2() {
         return tipoLivroPreferido2;
     }
+    
     public String getSenha() {
-        return senha;
+    return senha;
     }
 
     public ArrayList<Cargos> getCargos() {
@@ -118,8 +119,8 @@ public class Usuarios {
         this.tipoLivroPreferido2 = tipoLivroPreferido2;
     }
     
-    public void setSenha(String senha){
-        this.senha = senha;
+    public void setSenha(String senha) {
+    this.senha = senha;
     }
 
     public void setCargos(ArrayList<Cargos> cargos) {

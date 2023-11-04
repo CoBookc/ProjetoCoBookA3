@@ -50,7 +50,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButtonConsultar = new javax.swing.JButton();
         jLabelUsuariosSenha = new javax.swing.JLabel();
-        jPasswordFieldUsuariosSenha = new javax.swing.JPasswordField();
+        jPasswordFieldSenhaUsuarios = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Livraria");
@@ -150,9 +150,9 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
 
         jLabelUsuariosSenha.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabelUsuariosSenha.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelUsuariosSenha.setText("Senha Padrão:");
+        jLabelUsuariosSenha.setText("Senha:");
 
-        jPasswordFieldUsuariosSenha.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        jPasswordFieldSenhaUsuarios.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanelUsuarioLayout = new javax.swing.GroupLayout(jPanelUsuario);
         jPanelUsuario.setLayout(jPanelUsuarioLayout);
@@ -181,34 +181,32 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jFormattedTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jPanelUsuarioLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
-                                    .addComponent(jLabelLivroPreferido1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextFieldLivroPreferido1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
-                                    .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabelUsuariosSenha)
-                                        .addComponent(jLabelLivroPreferido2))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextFieldLivroPreferido2)
-                                        .addGroup(jPanelUsuarioLayout.createSequentialGroup()
-                                            .addComponent(jPasswordFieldUsuariosSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(0, 0, Short.MAX_VALUE))))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
-                            .addGap(83, 83, 83)
-                            .addComponent(jButtonSalvar)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButtonLimpar)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButton1)
-                            .addGap(18, 18, 18)
-                            .addComponent(jButtonConsultar))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelUsuarioLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabelLivroPreferido1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldLivroPreferido1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelUsuarioLayout.createSequentialGroup()
+                                .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelLivroPreferido2)
+                                    .addGroup(jPanelUsuarioLayout.createSequentialGroup()
+                                        .addGap(51, 51, 51)
+                                        .addComponent(jLabelUsuariosSenha)))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldLivroPreferido2)
+                                    .addComponent(jPasswordFieldSenhaUsuarios)))
+                            .addGroup(jPanelUsuarioLayout.createSequentialGroup()
+                                .addComponent(jButtonSalvar)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonLimpar)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonConsultar)))))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         jPanelUsuarioLayout.setVerticalGroup(
             jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,14 +242,14 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelUsuariosSenha)
-                    .addComponent(jPasswordFieldUsuariosSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                    .addComponent(jPasswordFieldSenhaUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvar)
                     .addComponent(jButtonLimpar)
                     .addComponent(jButton1)
                     .addComponent(jButtonConsultar))
-                .addGap(17, 17, 17))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -272,8 +270,8 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabelCadastroUsuario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 23, Short.MAX_VALUE))
+                .addComponent(jPanelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -289,7 +287,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         int idade = Integer.parseInt(jFormattedTextFieldIdade.getValue().toString());
         try {
             UsuariosController usuariosController = new UsuariosController();
-            sucesso = usuariosController.cadastrarUsuarios(jTextFieldNome.getText(),jTextFieldEmail.getText(), jFormattedTextFieldCPF.getText(), idade, jTextFieldSexo.getText(), jTextFieldLivroPreferido1.getText(), jTextFieldLivroPreferido2.getText(), jPasswordFieldUsuariosSenha.getText());
+            sucesso = usuariosController.cadastrarUsuarios(jTextFieldNome.getText(),jTextFieldEmail.getText(), jFormattedTextFieldCPF.getText(), idade, jTextFieldSexo.getText(), jTextFieldLivroPreferido1.getText(), jTextFieldLivroPreferido2.getText(), jPasswordFieldSenhaUsuarios.getText());
          if(sucesso){
              JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
          this.jButtonLimparActionPerformed(evt);
@@ -309,7 +307,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jTextFieldSexo.setText(""); 
         jTextFieldLivroPreferido1.setText(""); 
         jTextFieldLivroPreferido2.setText(""); 
-        jPasswordFieldUsuariosSenha.setText("");
+        jPasswordFieldSenhaUsuarios.setText("");
     }//GEN-LAST:event_jButtonLimparActionPerformed
 
     private void jFormattedTextFieldCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldCPFActionPerformed
@@ -368,7 +366,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelSexo;
     private javax.swing.JLabel jLabelUsuariosSenha;
     private javax.swing.JPanel jPanelUsuario;
-    private javax.swing.JPasswordField jPasswordFieldUsuariosSenha;
+    private javax.swing.JPasswordField jPasswordFieldSenhaUsuarios;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldLivroPreferido1;
     private javax.swing.JTextField jTextFieldLivroPreferido2;
