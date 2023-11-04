@@ -36,7 +36,7 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
         jMenuItemCadastroLivrosAdm = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu Administrador");
         setResizable(false);
 

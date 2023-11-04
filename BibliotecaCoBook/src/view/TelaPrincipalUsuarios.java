@@ -35,7 +35,7 @@ public class TelaPrincipalUsuarios extends javax.swing.JFrame {
         jMenuItemUsuariosCadastrarLivros = new javax.swing.JMenuItem();
         jMenuUsuariosSair = new javax.swing.JMenu();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Livraria");
         setResizable(false);
 
@@ -58,7 +58,6 @@ public class TelaPrincipalUsuarios extends javax.swing.JFrame {
 
         jMenuUsuariosLivraria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-livros-64.png"))); // NOI18N
         jMenuUsuariosLivraria.setText("Livraria");
-        jMenuUsuariosLivraria.setActionCommand("Livraria");
         jMenuUsuariosLivraria.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
 
         jMenuItemUsuariosVizualizarLivros.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
