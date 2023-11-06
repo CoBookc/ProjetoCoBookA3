@@ -3,9 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import dao.ConnectionMVC;
-import java.sql.Connection;
-import java.sql.Statement;
+import dto.LoginDTO;
+import dao.LoginDAO;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
@@ -137,16 +136,18 @@ public class Login extends javax.swing.JFrame {
     private void buttonSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignInActionPerformed
         // TODO add your handling code here:
          try {
-        Connection connection;
         String email = jTextFieldLoginUsuarios.getText();
         String senha = jPasswordFieldLoginUsuarios.getText();
-        String sql = "select * from usuarios where email ='"+email+"' and senha = '"+senha+"'";
-        connection = new ConnectionMVC().getConnection(); 
-           Statement stm = connection.createStatement();
+        
+        LoginDTO objLoginDto = new LoginDTO(); 
+        objLoginDto.setEmail(email);
+        objLoginDto.setSenha(senha);
+        
+        LoginDAO objLoginDao = new LoginDAO();
+        ResultSet rsLoginDao = objLoginDao.autenticacaoUsuario(objLoginDto);
+          
            
-           ResultSet rs = stm.executeQuery(sql);
-           
-           if(rs.next()){
+           if(rsLoginDao.next()){
            dispose();
              TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm();
               telaPrincipalAdm.setVisible(true);
@@ -156,8 +157,6 @@ public class Login extends javax.swing.JFrame {
                jPasswordFieldLoginUsuarios.setText("");
            }
            
-           connection.close();
-
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,(e.getMessage()));
         }
