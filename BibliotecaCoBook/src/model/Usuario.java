@@ -6,7 +6,7 @@ package model;
 
 import dao.ExceptionDAO;
 import java.util.ArrayList;
-import dao.UsuariosDAO;
+import dao.UsuarioDAO;
 
 
 
@@ -14,7 +14,7 @@ import dao.UsuariosDAO;
  *
  * @author Guilherme
  */
-public class Usuarios {
+public class Usuario {
     private Integer codUsuarios;
     private Integer idade;
     private String nome;
@@ -26,12 +26,13 @@ public class Usuarios {
     private String senha;
     private ArrayList<Cargos> cargos = new ArrayList<Cargos>();
     private ArrayList<Livro> livros = new ArrayList<Livro>();
+    private boolean administrador = false;
     
-    public Usuarios () {
+    public Usuario () {
         
     }
     
-    public Usuarios(String nome, String email, String cpf, Integer idade, String sexo, String tipoLivroPreferido1, String tipoLivroPreferido2, String senha){
+    public Usuario(String nome, String email, String cpf, Integer idade, String sexo, String tipoLivroPreferido1, String tipoLivroPreferido2, String senha, boolean administrador){
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
@@ -40,6 +41,7 @@ public class Usuarios {
         this.tipoLivroPreferido1 = tipoLivroPreferido1;
         this.tipoLivroPreferido2 = tipoLivroPreferido2;
         this.senha = senha;
+        this.administrador = administrador;
     }
 
     public Integer getCodUsuarios() {
@@ -76,6 +78,10 @@ public class Usuarios {
     
     public String getSenha() {
     return senha;
+    }
+    
+    public boolean isAdministrador() {
+    return administrador;
     }
 
     public ArrayList<Cargos> getCargos() {
@@ -122,6 +128,10 @@ public class Usuarios {
     public void setSenha(String senha) {
     this.senha = senha;
     }
+    
+    public void setAdministrador(boolean administrador) {
+    this.administrador = administrador;
+    }
 
     public void setCargos(ArrayList<Cargos> cargos) {
         this.cargos = cargos;
@@ -133,7 +143,9 @@ public class Usuarios {
     }
     
 
-    public void cadastrarUsuarios(Usuarios usuarios) throws ExceptionDAO {
-        new UsuariosDAO().cadastrarUsuarios(usuarios);
+    
+    public void cadastrarUsuarios(Usuario usuarios) throws ExceptionDAO {
+        new UsuarioDAO().cadastrarUsuarios(usuarios);
 }
+
 }

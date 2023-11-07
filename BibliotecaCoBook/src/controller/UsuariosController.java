@@ -4,7 +4,8 @@
  */
 package controller;
 import dao.ExceptionDAO;
-import model.Usuarios; 
+import dao.UsuarioDAO;
+import model.Usuario; 
 
 
 /**
@@ -13,16 +14,17 @@ import model.Usuarios;
  */
 public class UsuariosController {
     
-        public boolean cadastrarUsuarios(String nome, String email, String cpf, Integer idade, String sexo, String tipoLivroPreferido1, String tipoLivroPreferido2, String senha) throws ExceptionDAO{
-            if(nome != null && nome.length() > 0   && email != null && email.length()>0  && cpf != null && cpf.length() > 0 && validarCPF(cpf) && idade != null && idade > 0 && sexo != null && sexo.length() > 0 && tipoLivroPreferido1 != null && tipoLivroPreferido1.length() > 0 && tipoLivroPreferido2 != null && tipoLivroPreferido2.length() > 0 && senha != null && senha.length() > 0){
-                Usuarios usuarios = new Usuarios(nome, email, cpf, idade, sexo, tipoLivroPreferido1, tipoLivroPreferido2, senha);
-                usuarios.cadastrarUsuarios(usuarios);
-                return true;
-                
-                
-            }
+    
+    public boolean cadastrar(Usuario usuario) throws ExceptionDAO {
+        if(usuario.getNome() == null || usuario.getNome().length() == 0) { //||
+                   //&& email != null && email.length()>0  && cpf != null && cpf.length() > 0 && validarCPF(cpf) && idade != null && idade > 0 && sexo != null && sexo.length() > 0 && tipoLivroPreferido1 != null && tipoLivroPreferido1.length() > 0 && tipoLivroPreferido2 != null && tipoLivroPreferido2.length() > 0 && senha != null && senha.length() > 0 && administrador){
             return false;
         }
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.cadastrarUsuarios(usuario);
+        return true;
+    }
+    
       public boolean validarCPF(String cpf){
             for(int i=0; i < cpf.length(); i++){
                 if(!Character.isDigit(cpf.charAt(i))){

@@ -17,7 +17,7 @@ public class Livro {
     private String tipoLivro;
     private String autor;
     private Integer nota;
-    private Usuarios usuarios;
+    private Usuario usuarios;
     
      public Livro () {
         
@@ -50,7 +50,7 @@ public class Livro {
         return nota;
     }
 
-    public Usuarios getUsuarios() {
+    public Usuario getUsuarios() {
         return usuarios;
     }
 
@@ -74,7 +74,7 @@ public class Livro {
         this.nota = nota;
     }
 
-    public void setUsuarios(Usuarios usuarios) {
+    public void setUsuarios(Usuario usuarios) {
         this.usuarios = usuarios;
     }
     

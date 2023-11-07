@@ -13,6 +13,6 @@ import java.util.ArrayList;
 public class Cargos {
     private Integer codCargos;
     private String tipoFuncao;
-    private ArrayList<Usuarios> usuarios = new ArrayList<Usuarios>();
+    private ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
     private ArrayList<Atividades> atividades = new ArrayList<Atividades>();
 }

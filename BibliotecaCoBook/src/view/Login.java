@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-import dto.LoginDTO;
-import dao.LoginDAO;
+
+import model.Usuario;
+import dao.UsuarioDAO;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
@@ -135,32 +136,27 @@ public class Login extends javax.swing.JFrame {
 
     private void buttonSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSignInActionPerformed
         // TODO add your handling code here:
-         try {
-        String email = jTextFieldLoginUsuarios.getText();
-        String senha = jPasswordFieldLoginUsuarios.getText();
+      
+            String email = jTextFieldLoginUsuarios.getText();
+            String senha = jPasswordFieldLoginUsuarios.getText();
         
-        LoginDTO objLoginDto = new LoginDTO(); 
-        objLoginDto.setEmail(email);
-        objLoginDto.setSenha(senha);
-        
-        LoginDAO objLoginDao = new LoginDAO();
-        ResultSet rsLoginDao = objLoginDao.autenticacaoUsuario(objLoginDto);
-          
-           
-           if(rsLoginDao.next()){
-           dispose();
-             TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm();
-              telaPrincipalAdm.setVisible(true);
-           } else{
-               JOptionPane.showMessageDialog(this, "Usuário e senha estão incorretos!");
-               jTextFieldLoginUsuarios.setText("");
-               jPasswordFieldLoginUsuarios.setText("");
-           }
-           
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,(e.getMessage()));
-        }
-        
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            Usuario usuario = usuarioDAO.obter(email, senha);
+                  
+            if (usuario != null) {
+                if (usuario.isAdministrador()) {
+                    TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm();
+                    telaPrincipalAdm.setVisible(true);
+                } else {
+                       TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros();
+                       telaCadastroLivros.setVisible(true); 
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuário e senha estão incorretos!");
+                jTextFieldLoginUsuarios.setText("");
+                jPasswordFieldLoginUsuarios.setText("");
+            }
+       
         
     }//GEN-LAST:event_buttonSignInActionPerformed
 

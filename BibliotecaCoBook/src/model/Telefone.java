@@ -11,7 +11,7 @@ package model;
 public class Telefone {
     private Integer codTelefone;
     private String numeroTelefone;
-    private Usuarios usuarios;
+    private Usuario usuarios;
     private Telefone telefone;
 }
 

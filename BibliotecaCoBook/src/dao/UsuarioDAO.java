@@ -5,16 +5,43 @@
 package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import model.Usuarios;
+import javax.swing.JOptionPane;
+import model.Usuario;
 
 
 /**
  *
  * @author Gustavo
  */
-public class UsuariosDAO {
-    public void cadastrarUsuarios (Usuarios usuarios) throws ExceptionDAO {
+public class UsuarioDAO {
+    
+    public Usuario obter(String email, String senha) {
+        Connection connection = new ConnectionMVC().getConnection();
+        try {
+            String sql = "select nome,email,cpf,idade,sexo,senha,administrador from usuarios where email = ? and senha = ?"; 
+            PreparedStatement pStatement = connection.prepareStatement(sql);
+            pStatement.setString(1, email);
+            pStatement.setString(2, senha);
+            ResultSet rs = pStatement.executeQuery();
+            if (rs.next()) {
+                String nomeU = rs.getString(1);
+                String emailU = rs.getString(2);
+                String cpfU = rs.getString(3);
+                int idadeU = rs.getInt(4);
+                String sexoU = rs.getString(5);
+                String senhaU = rs.getString(6);
+                boolean administradorU = rs.getBoolean(7);
+                return new Usuario(nomeU, emailU, cpfU, idadeU, sexoU, null, null, senhaU, administradorU);
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+        return null;
+    }    
+     
+    public void cadastrarUsuarios(Usuario usuarios) throws ExceptionDAO {
         String sql = "Insert into usuarios (nome, email, cpf, idade, sexo, tipo_livro_preferido1, tipo_livro_preferido2, senha) values (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement pStatement = null;
         Connection connection = null;

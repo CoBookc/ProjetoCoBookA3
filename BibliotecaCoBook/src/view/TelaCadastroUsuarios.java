@@ -6,6 +6,7 @@ package view;
 
 import controller.UsuariosController;
 import javax.swing.JOptionPane;
+import model.Usuario;
 
 /**
  *
@@ -287,13 +288,14 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         int idade = Integer.parseInt(jFormattedTextFieldIdade.getValue().toString());
         try {
             UsuariosController usuariosController = new UsuariosController();
-            sucesso = usuariosController.cadastrarUsuarios(jTextFieldNome.getText(),jTextFieldEmail.getText(), jFormattedTextFieldCPF.getText(), idade, jTextFieldSexo.getText(), jTextFieldLivroPreferido1.getText(), jTextFieldLivroPreferido2.getText(), jPasswordFieldSenhaUsuarios.getText());
-         if(sucesso){
-             JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
-         this.jButtonLimparActionPerformed(evt);
-         } else {
-             JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente!");
-         }
+            Usuario usuario = new Usuario(jTextFieldNome.getText(), jTextFieldEmail.getText(), jFormattedTextFieldCPF.getText(), idade, jTextFieldSexo.getText(), jTextFieldLivroPreferido1.getText(), jTextFieldLivroPreferido2.getText(), jPasswordFieldSenhaUsuarios.getText(), false);
+            sucesso = usuariosController.cadastrar(usuario);
+            if (sucesso) {
+                JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
+                this.jButtonLimparActionPerformed(evt);
+            } else {
+                JOptionPane.showMessageDialog(null, "Os campos não foram preenchidos corretamente!");
+            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro:" + e);
         }
@@ -301,12 +303,12 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
 
     private void jButtonLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimparActionPerformed
         jFormattedTextFieldIdade.setText("");
-        jFormattedTextFieldCPF.setText("");        
-        jTextFieldNome.setText(""); 
-        jTextFieldEmail.setText(""); 
-        jTextFieldSexo.setText(""); 
-        jTextFieldLivroPreferido1.setText(""); 
-        jTextFieldLivroPreferido2.setText(""); 
+        jFormattedTextFieldCPF.setText("");
+        jTextFieldNome.setText("");
+        jTextFieldEmail.setText("");
+        jTextFieldSexo.setText("");
+        jTextFieldLivroPreferido1.setText("");
+        jTextFieldLivroPreferido2.setText("");
         jPasswordFieldSenhaUsuarios.setText("");
     }//GEN-LAST:event_jButtonLimparActionPerformed
 
