@@ -10,7 +10,8 @@ CREATE TABLE Usuarios (
     sexo VARCHAR(10),
     tipo_livro_preferido1 VARCHAR(100),
     tipo_livro_preferido2 VARCHAR(100),
-    senha VARCHAR(100)
+    senha VARCHAR(100),
+    administrador boolean
 );
 
 CREATE TABLE Cargos (
