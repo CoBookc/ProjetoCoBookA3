@@ -130,7 +130,7 @@ public class TelaPrincipalUsuarios extends javax.swing.JFrame {
     private void jMenuItemUsuariosCadastrarLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsuariosCadastrarLivrosActionPerformed
 
     dispose();
-    TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros();
+    TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros(false);
 
     telaCadastroLivros.setVisible(true);
     }//GEN-LAST:event_jMenuItemUsuariosCadastrarLivrosActionPerformed

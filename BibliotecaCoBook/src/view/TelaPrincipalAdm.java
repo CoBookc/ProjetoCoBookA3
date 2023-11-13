@@ -168,7 +168,7 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
 
     private void jMenuItemCadastroLivrosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastroLivrosAdmActionPerformed
             // Crie uma instância da tela de cadastro de livros
-    TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros();
+    TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros(true);
 
     // Torna a tela de cadastro de livros visível
     telaCadastroLivros.setVisible(true);
