@@ -34,7 +34,8 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
         jMenuCadastrarAdm = new javax.swing.JMenu();
         jMenuItemCadastrarUsuariosAdm = new javax.swing.JMenuItem();
         jMenuItemCadastroLivrosAdm = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        jMenuSair = new javax.swing.JMenu();
+        jMenuItemSairAdm = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menu Administrador");
@@ -108,10 +109,20 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuCadastrarAdm);
 
-        jMenu1.setText("Sair");
-        jMenu1.setToolTipText("");
-        jMenu1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jMenuBar1.add(jMenu1);
+        jMenuSair.setText("Sair");
+        jMenuSair.setToolTipText("");
+        jMenuSair.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+
+        jMenuItemSairAdm.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jMenuItemSairAdm.setText("Sair");
+        jMenuItemSairAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSairAdmActionPerformed(evt);
+            }
+        });
+        jMenuSair.add(jMenuItemSairAdm);
+
+        jMenuBar1.add(jMenuSair);
 
         setJMenuBar(jMenuBar1);
 
@@ -148,7 +159,7 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemVLivrosAdmActionPerformed
 
     private void jMenuItemCadastrarUsuariosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastrarUsuariosAdmActionPerformed
-
+     dispose();
     // Crie uma instância da tela de cadastro de usuários
     TelaCadastroUsuarios telaCadastroUsuarios = new TelaCadastroUsuarios();
     // Torna a tela de cadastro de usuários visível
@@ -162,6 +173,15 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     // Torna a tela de cadastro de livros visível
     telaCadastroLivros.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadastroLivrosAdmActionPerformed
+
+    private void jMenuItemSairAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairAdmActionPerformed
+
+    dispose();
+    Login login = new Login();
+
+    login.setVisible(true);
+  
+    }//GEN-LAST:event_jMenuItemSairAdmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,13 +221,14 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelAdmPrincipal;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastrarAdm;
     private javax.swing.JMenuItem jMenuItemCadastrarUsuariosAdm;
     private javax.swing.JMenuItem jMenuItemCadastroLivrosAdm;
+    private javax.swing.JMenuItem jMenuItemSairAdm;
     private javax.swing.JMenuItem jMenuItemVLivrosAdm;
     private javax.swing.JMenu jMenuLivrariaAdm;
+    private javax.swing.JMenu jMenuSair;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 

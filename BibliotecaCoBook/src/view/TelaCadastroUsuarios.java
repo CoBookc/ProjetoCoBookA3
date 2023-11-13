@@ -49,7 +49,6 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jButtonSalvar = new javax.swing.JButton();
         jButtonLimpar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButtonConsultar = new javax.swing.JButton();
         jLabelUsuariosSenha = new javax.swing.JLabel();
         jPasswordFieldSenhaUsuarios = new javax.swing.JPasswordField();
 
@@ -144,10 +143,11 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(240, 240, 240));
         jButton1.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButton1.setText("Cancelar");
-
-        jButtonConsultar.setBackground(new java.awt.Color(240, 240, 240));
-        jButtonConsultar.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jButtonConsultar.setText("Consultar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabelUsuariosSenha.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jLabelUsuariosSenha.setForeground(new java.awt.Color(255, 255, 255));
@@ -205,8 +205,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                                 .addComponent(jButtonLimpar)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonConsultar)))))
+                                .addGap(118, 118, 118)))))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         jPanelUsuarioLayout.setVerticalGroup(
@@ -248,8 +247,7 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
                 .addGroup(jPanelUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvar)
                     .addComponent(jButtonLimpar)
-                    .addComponent(jButton1)
-                    .addComponent(jButtonConsultar))
+                    .addComponent(jButton1))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -316,6 +314,14 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextFieldCPFActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
+    dispose();
+    TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm();
+
+    telaPrincipalAdm.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -353,7 +359,6 @@ public class TelaCadastroUsuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonConsultar;
     private javax.swing.JButton jButtonLimpar;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JFormattedTextField jFormattedTextFieldCPF;

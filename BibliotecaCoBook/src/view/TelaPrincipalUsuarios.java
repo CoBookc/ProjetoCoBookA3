@@ -34,6 +34,7 @@ public class TelaPrincipalUsuarios extends javax.swing.JFrame {
         jMenuUsuariosCadastrar = new javax.swing.JMenu();
         jMenuItemUsuariosCadastrarLivros = new javax.swing.JMenuItem();
         jMenuUsuariosSair = new javax.swing.JMenu();
+        jMenuItemSairUsuario = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Livraria");
@@ -85,6 +86,16 @@ public class TelaPrincipalUsuarios extends javax.swing.JFrame {
 
         jMenuUsuariosSair.setText("Sair");
         jMenuUsuariosSair.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+
+        jMenuItemSairUsuario.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        jMenuItemSairUsuario.setText("Sair");
+        jMenuItemSairUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSairUsuarioActionPerformed(evt);
+            }
+        });
+        jMenuUsuariosSair.add(jMenuItemSairUsuario);
+
         jMenuBar1.add(jMenuUsuariosSair);
 
         setJMenuBar(jMenuBar1);
@@ -117,12 +128,20 @@ public class TelaPrincipalUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemUsuariosCadastrarLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsuariosCadastrarLivrosActionPerformed
-     // Crie uma instância da tela de cadastro de livros
+
+    dispose();
     TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros();
 
-    // Torna a tela de cadastro de livros visível
     telaCadastroLivros.setVisible(true);
     }//GEN-LAST:event_jMenuItemUsuariosCadastrarLivrosActionPerformed
+
+    private void jMenuItemSairUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSairUsuarioActionPerformed
+        
+    dispose();
+    Login login = new Login();
+
+    login.setVisible(true);
+    }//GEN-LAST:event_jMenuItemSairUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,6 +181,7 @@ public class TelaPrincipalUsuarios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelUsuariosMenu;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemSairUsuario;
     private javax.swing.JMenuItem jMenuItemUsuariosCadastrarLivros;
     private javax.swing.JMenuItem jMenuItemUsuariosVizualizarLivros;
     private javax.swing.JMenu jMenuUsuariosCadastrar;

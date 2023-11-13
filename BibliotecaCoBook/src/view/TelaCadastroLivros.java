@@ -39,7 +39,6 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         jButtonSalvarLivro = new javax.swing.JButton();
         jButtonLimparLivro = new javax.swing.JButton();
         jButtonCancelarLivro = new javax.swing.JButton();
-        jButtonConsultarLivro = new javax.swing.JButton();
         jFormattedTextFieldNotaLivro = new javax.swing.JFormattedTextField();
         jLabelCadastroLivros = new javax.swing.JLabel();
 
@@ -93,10 +92,11 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         jButtonCancelarLivro.setBackground(new java.awt.Color(240, 240, 240));
         jButtonCancelarLivro.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButtonCancelarLivro.setText("Cancelar");
-
-        jButtonConsultarLivro.setBackground(new java.awt.Color(240, 240, 240));
-        jButtonConsultarLivro.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        jButtonConsultarLivro.setText("Consultar");
+        jButtonCancelarLivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarLivroActionPerformed(evt);
+            }
+        });
 
         jFormattedTextFieldNotaLivro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##"))));
         jFormattedTextFieldNotaLivro.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
@@ -126,9 +126,7 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonLimparLivro)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonCancelarLivro)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonConsultarLivro)))
+                        .addComponent(jButtonCancelarLivro)))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         jPanelCadastroLivrosLayout.setVerticalGroup(
@@ -154,8 +152,7 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
                 .addGroup(jPanelCadastroLivrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSalvarLivro)
                     .addComponent(jButtonLimparLivro)
-                    .addComponent(jButtonCancelarLivro)
-                    .addComponent(jButtonConsultarLivro))
+                    .addComponent(jButtonCancelarLivro))
                 .addGap(73, 73, 73))
         );
 
@@ -213,6 +210,13 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
         jTextFieldAutorLivro.setText(""); 
     }//GEN-LAST:event_jButtonLimparLivroActionPerformed
 
+    private void jButtonCancelarLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarLivroActionPerformed
+    dispose();
+    TelaPrincipalUsuarios telaPrincipalUsuarios = new TelaPrincipalUsuarios();
+
+    telaPrincipalUsuarios.setVisible(true);     
+    }//GEN-LAST:event_jButtonCancelarLivroActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -250,7 +254,6 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelarLivro;
-    private javax.swing.JButton jButtonConsultarLivro;
     private javax.swing.JButton jButtonLimparLivro;
     private javax.swing.JButton jButtonSalvarLivro;
     private javax.swing.JFormattedTextField jFormattedTextFieldNotaLivro;
