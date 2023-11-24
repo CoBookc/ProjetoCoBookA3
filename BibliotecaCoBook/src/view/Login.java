@@ -46,7 +46,7 @@ public class Login extends javax.swing.JFrame {
 
         jMenuItem2.setText("jMenuItem2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("LoginPage");
         setResizable(false);
 
@@ -145,9 +145,11 @@ public class Login extends javax.swing.JFrame {
                   
             if (usuario != null) {
                 if (usuario.isAdministrador()) {
+                    dispose();
                     TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm();
                     telaPrincipalAdm.setVisible(true);
                 } else {
+                    dispose();
                        TelaPrincipalUsuarios telaPrincipalUsuarios = new TelaPrincipalUsuarios();
                        telaPrincipalUsuarios.setVisible(true); 
                 }

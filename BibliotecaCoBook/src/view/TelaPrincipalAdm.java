@@ -26,7 +26,6 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jLabelAdmPrincipal = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuLivrariaAdm = new javax.swing.JMenu();
@@ -41,26 +40,18 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
         setTitle("Menu Administrador");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setPreferredSize(new java.awt.Dimension(780, 400));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fundo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(jLabel3)
-                .addContainerGap(109, Short.MAX_VALUE))
+            .addGap(0, 780, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel3)
-                .addContainerGap(14, Short.MAX_VALUE))
+            .addGap(0, 399, Short.MAX_VALUE)
         );
 
         jLabelAdmPrincipal.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
@@ -167,10 +158,9 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemCadastrarUsuariosAdmActionPerformed
 
     private void jMenuItemCadastroLivrosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastroLivrosAdmActionPerformed
-            // Crie uma instância da tela de cadastro de livros
+    dispose();
     TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros(true);
 
-    // Torna a tela de cadastro de livros visível
     telaCadastroLivros.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadastroLivrosAdmActionPerformed
 
@@ -219,7 +209,6 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelAdmPrincipal;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastrarAdm;
