@@ -146,7 +146,9 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemVLivrosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVLivrosAdmActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:]
+        TelaVisualizadorDeLivros telaVisualizadorDeLivros = new TelaVisualizadorDeLivros();
+        telaVisualizadorDeLivros.setVisible(true);
     }//GEN-LAST:event_jMenuItemVLivrosAdmActionPerformed
 
     private void jMenuItemCadastrarUsuariosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastrarUsuariosAdmActionPerformed

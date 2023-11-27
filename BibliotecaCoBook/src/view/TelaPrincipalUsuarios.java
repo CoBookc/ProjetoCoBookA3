@@ -65,6 +65,11 @@ public class TelaPrincipalUsuarios extends javax.swing.JFrame {
         jMenuItemUsuariosVizualizarLivros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flecha.png"))); // NOI18N
         jMenuItemUsuariosVizualizarLivros.setText("Visualizar Livros");
         jMenuItemUsuariosVizualizarLivros.setToolTipText("");
+        jMenuItemUsuariosVizualizarLivros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemUsuariosVizualizarLivrosActionPerformed(evt);
+            }
+        });
         jMenuUsuariosLivraria.add(jMenuItemUsuariosVizualizarLivros);
 
         jMenuBar1.add(jMenuUsuariosLivraria);
@@ -142,6 +147,12 @@ public class TelaPrincipalUsuarios extends javax.swing.JFrame {
 
     login.setVisible(true);
     }//GEN-LAST:event_jMenuItemSairUsuarioActionPerformed
+
+    private void jMenuItemUsuariosVizualizarLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsuariosVizualizarLivrosActionPerformed
+        // TODO add your handling code here:
+        TelaVisualizadorDeLivros telaVisualizadorDeLivros = new TelaVisualizadorDeLivros();
+        telaVisualizadorDeLivros.setVisible(true);
+    }//GEN-LAST:event_jMenuItemUsuariosVizualizarLivrosActionPerformed
 
     /**
      * @param args the command line arguments
