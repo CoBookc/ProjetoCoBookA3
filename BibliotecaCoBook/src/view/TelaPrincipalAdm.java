@@ -5,15 +5,19 @@
 
 package view;
 
+import model.Usuario;
+
 /**
  *
  * @author Guilherme
  */
 public class TelaPrincipalAdm extends javax.swing.JFrame {
-
+    private Usuario usuario;
+    
     /** Creates new form TelaPrincipalAdm */
-    public TelaPrincipalAdm() {
+    public TelaPrincipalAdm(Usuario usuario) {
         initComponents();
+        this.usuario = usuario;
     }
 
     /** This method is called from within the constructor to
@@ -152,16 +156,16 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemVLivrosAdmActionPerformed
 
     private void jMenuItemCadastrarUsuariosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastrarUsuariosAdmActionPerformed
-     dispose();
-    // Crie uma instância da tela de cadastro de usuários
-    TelaCadastroUsuarios telaCadastroUsuarios = new TelaCadastroUsuarios();
-    // Torna a tela de cadastro de usuários visível
-    telaCadastroUsuarios.setVisible(true);
+        dispose();
+        // Crie uma instância da tela de cadastro de usuários
+        TelaCadastroUsuarios telaCadastroUsuarios = new TelaCadastroUsuarios(usuario);
+        // Torna a tela de cadastro de usuários visível
+        telaCadastroUsuarios.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadastrarUsuariosAdmActionPerformed
 
     private void jMenuItemCadastroLivrosAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCadastroLivrosAdmActionPerformed
     dispose();
-    TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros(true);
+    TelaCadastroLivros telaCadastroLivros = new TelaCadastroLivros(usuario);
 
     telaCadastroLivros.setVisible(true);
     }//GEN-LAST:event_jMenuItemCadastroLivrosAdmActionPerformed
@@ -178,37 +182,37 @@ public class TelaPrincipalAdm extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipalAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaPrincipalAdm().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(TelaPrincipalAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(TelaPrincipalAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(TelaPrincipalAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(TelaPrincipalAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new TelaPrincipalAdm().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelAdmPrincipal;

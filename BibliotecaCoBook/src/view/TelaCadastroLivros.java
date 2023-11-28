@@ -6,17 +6,19 @@ package view;
 
 import controller.LivroController;
 import javax.swing.JOptionPane;
+import model.Usuario;
+import model.Livro;
 /**
  *
  * @author Guilherme
  */
 public class TelaCadastroLivros extends javax.swing.JFrame {
-    boolean administrador; 
+    Usuario usuario;
     /**
      * Creates new form TelaCadastroLivros
      */
-    public TelaCadastroLivros(boolean administrador) {
-        this.administrador = administrador;
+    public TelaCadastroLivros(Usuario usuario) {
+        this.usuario = usuario;
         initComponents();
     }
 
@@ -188,10 +190,11 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
 
     private void jButtonSalvarLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarLivroActionPerformed
          boolean sucesso;
-        int nota = Integer.parseInt(jFormattedTextFieldNotaLivro.getValue().toString());
+        double nota = Double.parseDouble(jFormattedTextFieldNotaLivro.getValue().toString());
         try {
             LivroController livroController = new LivroController();
-            sucesso = livroController.cadastrarLivro(jTextFieldTituloLivro.getText(),jTextFieldTipoLivro.getText(), jTextFieldAutorLivro.getText(), nota);
+            Livro livro = new Livro(jTextFieldTituloLivro.getText(),jTextFieldTipoLivro.getText(), jTextFieldAutorLivro.getText());
+            sucesso = livroController.cadastrarLivro(this.usuario, livro, nota);
          if(sucesso){
              JOptionPane.showMessageDialog(null, "O cadastro foi realizado com sucesso!");
              this.jButtonLimparLivroActionPerformed(evt);
@@ -213,11 +216,11 @@ public class TelaCadastroLivros extends javax.swing.JFrame {
 
     private void jButtonCancelarLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarLivroActionPerformed
         dispose();
-        if (administrador){
-            TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm();
+        if (usuario.isAdministrador()){
+            TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm(usuario);
             telaPrincipalAdm.setVisible(true);
         } else {
-            TelaPrincipalUsuarios telaPrincipalUsuarios = new TelaPrincipalUsuarios();
+            TelaPrincipalUsuarios telaPrincipalUsuarios = new TelaPrincipalUsuarios(usuario);
             telaPrincipalUsuarios.setVisible(true); 
         }
     }//GEN-LAST:event_jButtonCancelarLivroActionPerformed

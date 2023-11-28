@@ -15,7 +15,7 @@ import dao.UsuarioDAO;
  * @author Guilherme
  */
 public class Usuario {
-    private Integer codUsuarios;
+    private Integer codUsuario;
     private Integer idade;
     private String nome;
     private String email;
@@ -32,7 +32,8 @@ public class Usuario {
         
     }
     
-    public Usuario(String nome, String email, String cpf, Integer idade, String sexo, String tipoLivroPreferido1, String tipoLivroPreferido2, String senha, boolean administrador){
+    public Usuario(Integer codUsuario,String nome, String email, String cpf, Integer idade, String sexo, String tipoLivroPreferido1, String tipoLivroPreferido2, String senha, boolean administrador){
+        this.codUsuario = codUsuario;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
@@ -44,8 +45,8 @@ public class Usuario {
         this.administrador = administrador;
     }
 
-    public Integer getCodUsuarios() {
-        return codUsuarios;
+    public Integer getCodUsuario() {
+        return codUsuario;
     }
 
     public Integer getIdade() {
@@ -93,8 +94,8 @@ public class Usuario {
         return livros;
     }
 
-    public void setCodUsuarios(Integer codUsuarios) {
-        this.codUsuarios = codUsuarios;
+    public void setCodUsuario(Integer codUsuario) {
+        this.codUsuario = codUsuario;
     }
 
     public void setIdade(Integer idade) {

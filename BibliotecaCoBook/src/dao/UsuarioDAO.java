@@ -20,7 +20,7 @@ public class UsuarioDAO {
     public Usuario obter(String email, String senha) {
         Connection connection = new ConnectionMVC().getConnection();
         try {
-            String sql = "select nome,email,cpf,idade,sexo,senha,administrador from usuarios where email = ? and senha = ?"; 
+            String sql = "select nome,email,cpf,idade,sexo,senha,administrador,cod_usuarios from usuarios where email = ? and senha = ?"; 
             PreparedStatement pStatement = connection.prepareStatement(sql);
             pStatement.setString(1, email);
             pStatement.setString(2, senha);
@@ -33,9 +33,11 @@ public class UsuarioDAO {
                 String sexoU = rs.getString(5);
                 String senhaU = rs.getString(6);
                 boolean administradorU = rs.getBoolean(7);
-                return new Usuario(nomeU, emailU, cpfU, idadeU, sexoU, null, null, senhaU, administradorU);
+                int codUsuario = rs.getInt("cod_usuarios");
+                return new Usuario(codUsuario, nomeU, emailU, cpfU, idadeU, sexoU, null, null, senhaU, administradorU);
             }
         } catch (SQLException e) {
+            e.printStackTrace();
             return null;
         }
         return null;

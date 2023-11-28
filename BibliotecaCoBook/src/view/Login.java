@@ -146,12 +146,12 @@ public class Login extends javax.swing.JFrame {
             if (usuario != null) {
                 if (usuario.isAdministrador()) {
                     dispose();
-                    TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm();
+                    TelaPrincipalAdm telaPrincipalAdm = new TelaPrincipalAdm(usuario);
                     telaPrincipalAdm.setVisible(true);
                 } else {
                     dispose();
-                       TelaPrincipalUsuarios telaPrincipalUsuarios = new TelaPrincipalUsuarios();
-                       telaPrincipalUsuarios.setVisible(true); 
+                    TelaPrincipalUsuarios telaPrincipalUsuarios = new TelaPrincipalUsuarios(usuario);
+                    telaPrincipalUsuarios.setVisible(true); 
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "Usuário e senha estão incorretos!");

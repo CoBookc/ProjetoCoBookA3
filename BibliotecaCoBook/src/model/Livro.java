@@ -16,18 +16,20 @@ public class Livro {
     private String titulo;
     private String tipoLivro;
     private String autor;
-    private Integer nota;
-    private Usuario usuarios;
     
-     public Livro () {
-        
+    public Livro () {
     }
-    public Livro(String titulo,String tipoLivro,String autor, Integer nota){
 
+    public Livro(Integer codLivro, String titulo,String tipoLivro,String autor) {
+        this(titulo, tipoLivro, autor);
+        this.codLivro = codLivro;
+    }
+
+
+    public Livro(String titulo,String tipoLivro,String autor){
         this.titulo = titulo;
         this.tipoLivro = tipoLivro;
         this.autor = autor;
-        this.nota = nota;
     }
 
     public Integer getCodLivro() {
@@ -46,14 +48,6 @@ public class Livro {
         return autor;
     }
 
-    public Integer getNota() {
-        return nota;
-    }
-
-    public Usuario getUsuarios() {
-        return usuarios;
-    }
-
     public void setCodLivro(Integer codLivro) {
         this.codLivro = codLivro;
     }
@@ -68,20 +62,5 @@ public class Livro {
 
     public void setAutor(String autor) {
         this.autor = autor;
-    }
-
-    public void setNota(Integer nota) {
-        this.nota = nota;
-    }
-
-    public void setUsuarios(Usuario usuarios) {
-        this.usuarios = usuarios;
-    }
-    
-
-    
-    public void cadastrarLivro(Livro livro) throws ExceptionDAO{
-      new LivroDAO().cadastrarLivro(livro);
-      
     }
 }
