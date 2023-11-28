@@ -28,15 +28,23 @@ CREATE TABLE cargos_usuarios (
 );
 
 
-CREATE TABLE Livro (
+CREATE TABLE livro (
     cod_livro INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(100) NOT NULL,
 	tipo_livro VARCHAR(100) NOT NULL,
-    autor VARCHAR(100) NOT NULL,
-    nota INT NOT NULL,
-    cod_usuario INT,
-    CONSTRAINT FK_COD_USUARIOS_LIVRO FOREIGN KEY(cod_usuario) REFERENCES Usuarios (cod_usuarios)
+    autor VARCHAR(100) NOT NULL
 );
+
+CREATE TABLE avaliacoes (
+cod_livro INT,
+cod_usuarios INT,
+PRIMARY KEY (cod_livro, cod_usuarios), 
+CONSTRAINT fk_cod_livro FOREIGN KEY (cod_livro) REFERENCES livro (cod_livro),
+CONSTRAINT fk_cod_usuarios_avaliacoes FOREIGN KEY (cod_usuarios) REFERENCES usuarios (cod_usuarios),
+nota INT
+);
+
+
 INSERT INTO Usuarios (nome, email, CPF, idade, sexo, tipo_livro_preferido1, tipo_livro_preferido2, senha, administrador) VAlUES ('Guilherme Caetano da Silva', 'guilherme.caetano@gmail.com', '400.289.222-22' , 22, 'Masculino', 'Percy Jackson e o ladrão de raios', 'Harry Potter e a pedra filosofal', 'admin01', TRUE);
 
 																																					
