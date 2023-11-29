@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.VisualizadorDeLivros;
-import view.VisualizadorDeLivrosTableModel;
+import model.VisualizadorDeLivrosTableModel;
 
 /**
  *
