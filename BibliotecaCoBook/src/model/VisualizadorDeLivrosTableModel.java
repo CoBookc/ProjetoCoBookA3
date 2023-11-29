@@ -42,7 +42,15 @@ public class VisualizadorDeLivrosTableModel extends AbstractTableModel {
         return colunas.length;
    
     }
-
+    /* Adidionado setDados */
+      public void setDados(VisualizadorDeLivros[] dados) {
+        this.dados = new ArrayList<>();
+        for (VisualizadorDeLivros livro : dados) {
+            this.dados.add(livro);
+        }
+        fireTableDataChanged();
+    }
+      
     @Override
     public Object getValueAt(int linha, int coluna) {
         
@@ -52,7 +60,11 @@ public class VisualizadorDeLivrosTableModel extends AbstractTableModel {
             case 1:
                 return dados.get(linha).getNota();
         }
+        
         return null;
+        
+
+  
     }
     
     

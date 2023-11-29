@@ -23,8 +23,10 @@ public class TabelaDAO {
     public VisualizadorDeLivros[] obter() {
         Connection connection = new ConnectionMVC().getConnection();
         
+        
         try {
-            String sql = "select l.*, avg(a.nota) as nota from livro l join avaliacoes a where l.cod_livro = a.cod_livro group by a.cod_livro order by avg(a.nota),count(a.nota)"; 
+            /* alterada linha 29 String sql */
+            String sql = "select l.*, avg(a.nota) as nota from livro l join avaliacoes a where l.cod_livro = a.cod_livro group by a.cod_livro order by avg(a.nota) DESC,count(a.nota) DESC, l.titulo ASC";
             PreparedStatement pStatement = connection.prepareStatement(sql,
             ResultSet.TYPE_SCROLL_INSENSITIVE,
             ResultSet.CONCUR_READ_ONLY);

@@ -16,7 +16,7 @@ import model.VisualizadorDeLivrosTableModel;
  * @author Gustavo
  */
 public class TelaVisualizadorDeLivros extends javax.swing.JFrame {
-
+private VisualizadorDeLivrosTableModel tableModel = new VisualizadorDeLivrosTableModel();
    
    
 
@@ -25,15 +25,22 @@ public class TelaVisualizadorDeLivros extends javax.swing.JFrame {
      */
     
     /* Feito através do vídeo  Como criar TableModel JTable do zero - #02 - AbstractTableModel */
-    VisualizadorDeLivrosTableModel tableModel = new VisualizadorDeLivrosTableModel();
+    
      public TelaVisualizadorDeLivros() {
         initComponents();
         tabelaVisualizadorDeLivros.setModel(tableModel);
-        
+        /*adicionado carregarDadosNaTabela */
+        carregarDadosNaTabela();
        
     }
-     
-  
+       /*criado carregarDadosNaTabela */
+    private void carregarDadosNaTabela() {
+        TabelaDAO tabelaDAO = new TabelaDAO();
+        VisualizadorDeLivros[] dadosOrdenados = tabelaDAO.obter(); // Substitua por seu método real
+        tableModel.setDados(dadosOrdenados);
+        tableModel.fireTableDataChanged();
+    }
+
     
     
   /* CÒDIGO DA AULA 11(professor)
