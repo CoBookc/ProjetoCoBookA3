@@ -9,7 +9,7 @@ CREATE TABLE Usuarios (
     sexo VARCHAR(10) NOT NULL,
     tipo_livro_preferido1 VARCHAR(100),
     tipo_livro_preferido2 VARCHAR(100),
-    senha VARCHAR(100) NOT NULL CONSTRAINT senha_registrada CHECK (LENGTH(senha) >0),
+    senha VARCHAR(100) NOT NULL CHECK (CHAR_LENGTH(senha) > 0),
     administrador BOOLEAN
 );
 
