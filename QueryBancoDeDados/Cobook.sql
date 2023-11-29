@@ -41,7 +41,7 @@ cod_usuarios INT,
 PRIMARY KEY (cod_livro, cod_usuarios), 
 CONSTRAINT fk_cod_livro FOREIGN KEY (cod_livro) REFERENCES livro (cod_livro),
 CONSTRAINT fk_cod_usuarios_avaliacoes FOREIGN KEY (cod_usuarios) REFERENCES usuarios (cod_usuarios),
-nota INT
+nota DOUBLE
 );
 
 

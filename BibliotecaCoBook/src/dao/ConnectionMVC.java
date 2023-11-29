@@ -24,7 +24,7 @@ public class ConnectionMVC {
         }
         
         try{
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cobook?useSSL=false", "root", "anima123");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cobook?useSSL=false", "root", "senha");
         } catch (SQLException e) {
         e.printStackTrace();
         }
