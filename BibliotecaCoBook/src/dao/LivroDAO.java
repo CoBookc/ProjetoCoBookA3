@@ -14,6 +14,7 @@ import java.sql.ResultSet;
  */
 public class LivroDAO {
     public void cadastrarLivro(Livro livro) throws ExceptionDAO {
+        if (!livroJaCadastrado(livro.getTitulo())) {
         String sql = "Insert into livro (titulo, tipo_livro, autor) values (?, ?, ?)";
         PreparedStatement pStatement = null;
         Connection connection = null;
@@ -44,7 +45,45 @@ public class LivroDAO {
                 throw new ExceptionDAO("Erro ao fechar a conexão: " + e);
             }
         }
-    }
+      }
+   }
+    
+    private boolean livroJaCadastrado(String titulo) throws ExceptionDAO {
+        String sql = "SELECT * FROM livro WHERE titulo = ?";
+        PreparedStatement pStatement = null;
+        Connection connection = null;
+
+        try {
+            connection = new ConnectionMVC().getConnection();
+            pStatement = connection.prepareStatement(sql);
+            pStatement.setString(1, titulo);
+
+            ResultSet resultSet = pStatement.executeQuery();
+            return resultSet.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new ExceptionDAO ("Erro ao cadastrar Livro: " + e);
+        } finally {
+            try{
+                if (pStatement != null) {
+                    pStatement.close();
+                }
+            } catch (SQLException e) {
+                throw new ExceptionDAO("Erro ao fechar o Statement: " + e);
+            }
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                throw new ExceptionDAO("Erro ao fechar a conexão: " + e);
+            }
+        }
+        }     
+    
+    
+ 
+    
     
     public Livro consultarLivro(String tituloProcura) throws ExceptionDAO {
         String sql = "select cod_livro, titulo, tipo_livro, autor from livro where titulo = ?";

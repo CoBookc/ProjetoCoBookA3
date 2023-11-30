@@ -74,6 +74,7 @@ private VisualizadorDeLivrosTableModel tableModel = new VisualizadorDeLivrosTabl
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Visualizar Livros");
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
 
