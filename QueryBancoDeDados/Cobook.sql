@@ -45,7 +45,7 @@ nota DOUBLE
 
 );
 /*select l.*, avg(a.nota) as nota from livro l join avaliacoes a where l.cod_livro = a.cod_livro group by a.cod_livro order by avg(a.nota) DESC,count(a.nota) DESC, l.titulo ASC*/
-
+/*SELECT l.titulo, l.autor, AVG(a.nota) AS nota FROM livro l JOIN avaliacoes a ON l.cod_livro = a.cod_livro GROUP BY a.cod_livro ORDER BY AVG(a.nota) DESC, COUNT(a.nota) DESC, l.titulo ASC*/
 INSERT INTO Usuarios (nome, email, CPF, idade, sexo, tipo_livro_preferido1, tipo_livro_preferido2, senha, administrador) VAlUES ('Guilherme Caetano da Silva', 'guilherme.caetano@gmail.com', '400.289.222-22' , 22, 'Masculino', 'Percy Jackson e o ladrão de raios', 'Harry Potter e a pedra filosofal', 'admin01', TRUE);
 
 																																					

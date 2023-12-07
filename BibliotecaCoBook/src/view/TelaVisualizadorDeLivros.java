@@ -24,7 +24,7 @@ private VisualizadorDeLivrosTableModel tableModel = new VisualizadorDeLivrosTabl
      * Creates new form TelaVisualizadorDeLivros
      */
     
-    /* Feito através do vídeo  Como criar TableModel JTable do zero - #02 - AbstractTableModel */
+ 
     
      public TelaVisualizadorDeLivros() {
         initComponents();
@@ -43,7 +43,7 @@ private VisualizadorDeLivrosTableModel tableModel = new VisualizadorDeLivrosTabl
 
     
     
-  /* CÒDIGO DA AULA 11(professor)
+  /* CÒDIGO DA AULA 11
     public TelaVisualizadorDeLivros() {
         initComponents();
         tabelaVisualizadorDeLivros = new JTable(new VisualizadorDeLivrosTableModel());
@@ -84,7 +84,7 @@ private VisualizadorDeLivrosTableModel tableModel = new VisualizadorDeLivrosTabl
 
             },
             new String [] {
-                "Title 1", "Title 2"
+                "Title 1", "Title 2", "Title 3"
             }
         ));
         jScrollPane2.setViewportView(tabelaVisualizadorDeLivros);

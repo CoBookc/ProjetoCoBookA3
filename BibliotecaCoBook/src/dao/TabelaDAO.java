@@ -19,14 +19,14 @@ import model.VisualizadorDeLivros;
  */
 public class TabelaDAO {
   
-    /* CÓDIGO DA AULA11(professor)*/
+    /* CÓDIGO DA AULA11*/
     public VisualizadorDeLivros[] obter() {
         Connection connection = new ConnectionMVC().getConnection();
         
         
         try {
             /* alterada linha 29 String sql */
-            String sql = "select l.*, avg(a.nota) as nota from livro l join avaliacoes a where l.cod_livro = a.cod_livro group by a.cod_livro order by avg(a.nota) DESC,count(a.nota) DESC, l.titulo ASC";
+            String sql = "SELECT l.titulo, l.autor, AVG(a.nota) AS nota FROM livro l JOIN avaliacoes a ON l.cod_livro = a.cod_livro GROUP BY a.cod_livro ORDER BY AVG(a.nota) DESC, COUNT(a.nota) DESC, l.titulo ASC";
             PreparedStatement pStatement = connection.prepareStatement(sql,
             ResultSet.TYPE_SCROLL_INSENSITIVE,
             ResultSet.CONCUR_READ_ONLY);
@@ -38,8 +38,9 @@ public class TabelaDAO {
             
             while (rs.next()) {
                 String titulo = rs.getString("titulo");
+                String autor = rs.getString("autor");
                 double nota = rs.getDouble("nota");
-                VisualizadorDeLivros vl = new VisualizadorDeLivros(titulo, nota);
+                VisualizadorDeLivros vl = new VisualizadorDeLivros(titulo, autor, nota);
                 lista[contador++] = vl;
             }
             return lista;

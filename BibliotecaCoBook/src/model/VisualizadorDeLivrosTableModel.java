@@ -21,9 +21,9 @@ import model.VisualizadorDeLivros;
 
 public class VisualizadorDeLivrosTableModel extends AbstractTableModel {
      
-  /* Feito através do vídeo  Como criar TableModel JTable do zero - #02 - AbstractTableModel */    
+    
     private List<VisualizadorDeLivros> dados = new ArrayList<>();
-    private String[] colunas = {"titulo", "nota"};
+    private String[] colunas = {"Titulo", "Autor", "Nota"};
     
     
     @Override
@@ -58,6 +58,8 @@ public class VisualizadorDeLivrosTableModel extends AbstractTableModel {
             case 0:
                 return dados.get(linha).getTitulo();
             case 1:
+                return dados.get(linha).getAutor();
+            case 2:
                 return dados.get(linha).getNota();
         }
         
